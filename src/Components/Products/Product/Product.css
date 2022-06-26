@@ -20,6 +20,13 @@
     transition: .3s;
     height: 100%;
     /* width: 200px; */
+
+}
+.item .img img{
+    transition: .3s;
+}
+.item .img:hover img{
+    transform:  rotate(-1deg) scale(1.07);
 }
 
 .item .add-to-cart {
