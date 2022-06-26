@@ -9,7 +9,7 @@
     /* min-height: 180px; */
     background-color: rgba(255, 255, 255, 1);
     right: -10px;
-    top: 40px;
+    top: 48px;
     max-width: 80vw;
     -webkit-box-shadow: 0px 0px 24px -12px rgba(222, 222, 222, 1);
     -moz-box-shadow: 0px 0px 24px -12px rgba(222, 222, 222, 1);
@@ -19,6 +19,12 @@
     overflow-y: auto;
     /* height: 40vh; */
     max-height: 50vh;
+}
+@media (max-width:992px) {
+    .cart {
+        left: -210px;
+        /* transform: translateX(-50%); */
+    }
 }
 
 .cart::after {
@@ -68,9 +74,20 @@
 
 
 
+/* Custom scroll bar */
+.cart::-webkit-scrollbar {
+    width: 5px;
+}
 
 
-
+.cart::-webkit-scrollbar-track {
+    background-color: white
+}
+.cart::-webkit-scrollbar-thumb {
+   background-color: black;
+   height: 20px;
+   border-radius: 40px;
+}
 /* Animating Counter  */
 
 /* ----------------------------------------------

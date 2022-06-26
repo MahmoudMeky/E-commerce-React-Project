@@ -1,8 +1,10 @@
 .navbar {
-    position: absolute;
+    position: sticky;
     left: 0;
     top: 0;
     z-index: 2;
+    background-color: white;
+
 }
 
 .navbar-nav {
@@ -15,7 +17,9 @@
     color: black !important;
     text-transform: uppercase;
 }
-
+.nav-link:hover{
+    color: #ff5b5b!important;
+}
 .navbar-light .navbar-nav .nav-link {
     padding: unset;
     margin-left: .85em;
@@ -34,9 +38,18 @@
     border-radius: 0;
     margin-top: 30px;
     min-width: 251px;
-    position: absolute!important;
-    border: none!important;
+    position: absolute !important;
+    border: none !important;
 }
+
+@media (max-width:992px) {
+    .dropdown-menu {
+        background-color: #f4f4f4;
+        position: static!important;
+
+    }
+}
+
 
 .dropdown-menu::after {
     content: "";
@@ -61,9 +74,4 @@
 .dropdown-item:hover {
     background-color: black;
     color: white;
-}
-
-.navbar{
-    position: fixed;
-    background-color: white;
 }

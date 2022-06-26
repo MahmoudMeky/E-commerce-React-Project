@@ -46,7 +46,7 @@ export default function Cart() {
         <div className="cart p-3 d-flex  flex-column justify-content-start">
           <div className="top d-flex m-0 justify-content-between w-100 pb-2 border-bottom">
             <span className="text-uppercase">{numberOfCartItems} Items</span>
-            <span className="text-uppercase">View Cart</span>
+            <a className="text-uppercase" href="/cart">View Cart</a>
           </div>
 
           {cartContext.items.map((item) => {

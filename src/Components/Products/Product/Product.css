@@ -6,6 +6,8 @@
     justify-content: space-between;
     align-items: center;
     height: 250px;
+    position: relative;
+    overflow: hidden;
 }
 
 .item .text {
@@ -22,20 +24,22 @@
     /* width: 200px; */
 
 }
-.item .img img{
+
+.item .img img {
     transition: .3s;
 }
-.item .img:hover img{
-    transform:  rotate(-1deg) scale(1.07);
+
+.item .img:hover img {
+    transform: rotate(-1deg) scale(1.07);
 }
 
-.item .add-to-cart {
+.item .view-item {
     position: absolute;
     bottom: -120px;
     background-color: #242629;
     /* background-color: #1362c9; */
     width: 100%;
-    padding: .5rem;
+    padding: .5rem 0;
     text-transform: uppercase;
     color: white;
     display: flex;
@@ -44,18 +48,19 @@
     gap: 10px;
     transition: .3s;
     cursor: pointer;
+    z-index: 1;
 }
 
-.item .add-to-cart img {
+.item .view-item img {
     width: 2rem;
     margin-top: 0px;
 }
 
-.item .add-to-cart h5 {
+.item .view-item h5 {
     margin-bottom: -3px;
 }
 
-.item:hover .add-to-cart {
+.item:hover .view-item {
     bottom: 0;
 }
 
@@ -63,28 +68,91 @@
     opacity: 1;
 }
 
+.item .view-item:hover {
+    background-color: black;
+}
+
+/* .item .img::before {
+    content: "";
+    position: absolute;
+    width:60px;
+    height: 100%;
+    right: 0;
+    background-color: rgba(255, 0, 0, 0.321);
+    z-index: 1;
+    filter: blur(5px);
+    border-radius: 50%;
+
+    transition: .3s;
+    opacity: 0;
+}
+.item:hover .img::before{
+    opacity: 1;
+} */
+
+
+
+.item .add-to-cart {
+    position: absolute;
+    top: 20px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    z-index: 1;
+
+    right: 0;
+    opacity: 0;
+    transition: .3s;
+
+}
+
 .item .add-to-cart:hover {
     background-color: black;
 }
 
+.item .add-to-cart:hover svg {
+    fill: white;
+}
 
-.animation-text{
+.item:hover .add-to-cart {
+    right: 20px;
+    opacity: 1;
+
+}
+
+.item .add-to-cart svg {
+    transition: .3s;
+}
+
+
+
+
+
+
+
+
+.animation-text {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,50%);
+    transform: translate(-50%, 50%);
     background-color: #ff5b5b;
     padding: 10px 20px;
     color: white;
     border-radius: 10px 0;
     transition: .3s;
-     bottom: -50px; 
-     opacity: 0;
+    bottom: -50px;
+    opacity: 0;
     /* bottom: 50%; */
-    width:fit-content
-
+    width: fit-content
 }
 
-.animation-text.show{
+.animation-text.show {
     bottom: 50%;
     opacity: 1;
 }
