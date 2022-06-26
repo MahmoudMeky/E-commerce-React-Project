@@ -14,9 +14,9 @@ import "./MainNavbar.css";
 
 export default function MainNavbar() {
   return (
-    <Navbar bg="" expand="lg" className="w-100">
-      <Container fluid className="gap-lg-3 px-sm-5">
-        <Navbar.Brand href="#">
+    <Navbar bg="" expand="lg" className="w-100 px-5  shadow-lg" >
+      <Container fluid className="gap-lg-3 px-3">
+        <Navbar.Brand href="/home">
           <img
             src="/logo.png"
             className="d-inline-block align-top"

@@ -1,6 +1,6 @@
 .item {
     /* background-color: rgba(0, 0, 0, 0.153); */
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

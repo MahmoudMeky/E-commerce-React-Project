@@ -18,7 +18,7 @@ export default function Categories() {
   }, [categories])
 
   return (
-    <section className="row p-0 p-md-5 py-5 m-0">
+    <section className="row  py-5 m-0">
       <h5 className="section-title mb-5">Categories</h5>
       <div className="categories">
         {categories.map((cat) => {
