@@ -20,7 +20,7 @@ export default function Categories() {
   return (
     <section className="row p-0 p-md-5 py-5 m-0">
       <h5 className="section-title mb-5">Categories</h5>
-      <div className="new-items">
+      <div className="categories">
         {categories.map((prod) => {
           return (
             <CategoryItem

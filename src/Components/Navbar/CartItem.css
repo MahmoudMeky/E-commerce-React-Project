@@ -34,7 +34,18 @@
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    /* padding: 2px 1px; */
+    /* padding: 1px 7px; */
+    width: 25px;
+    transition: .3s;
+}
+
+.cart__item button:hover{
+    background-color: #ff0018;
+    color: white;
+}
+.cart__item button:active{
+    background-color: #000;
+    color: white;
 }
 
 .cart__item .image{
