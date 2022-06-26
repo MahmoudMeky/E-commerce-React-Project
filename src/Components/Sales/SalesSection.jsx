@@ -5,6 +5,7 @@ import "./SalesSection.css";
 export default function SalesSection() {
   return (
     <section className="sales row p-0 p-md-5 py-5 m-0">
+      <h4 className="section-title mb-5">Find all you need...</h4>
       <SalesItem
         imgSrc="/sales/sales1.jpg"
         title="All About Men.."
