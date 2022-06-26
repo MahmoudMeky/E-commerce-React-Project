@@ -1,0 +1,14 @@
+.products .items {
+    /* background-color: rgba(106, 57, 88, 0.101); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    row-gap: 30px;
+    /* justify-content: space-between; */
+}
+
+
+/* .products button {
+    width: fit-content;
+    padding: 10px 20px;
+} */

@@ -1,0 +1,70 @@
+.sales-item {
+    position: relative;
+    transition: .3s;
+    /* filter: grayscale(270%) */
+    overflow: hidden;
+}
+
+.sales-item:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+    /* filter: grayscale(110%) */
+}
+
+.sales-item img {
+    transition: .3s;
+}
+
+.sales-item:hover img {
+    transform: scale(1.05);
+}
+
+.sales-btn {
+    width: fit-content;
+}
+
+[class*="sales-text"] {
+    position: absolute;
+    width: 70%;
+    bottom: 50px;
+}
+
+
+.sales-text-2 span,.sales-text-3 span{
+    color: white!important;
+}
+
+.sales-text-1 {
+    bottom: 10%;
+    left: 50px;
+    /* background-color: red; */
+    align-items: flex-start !important;
+    /* position: relative; */
+}
+
+
+
+
+.sales-text-2,.sales-text-3 {
+    /* top: 12%; */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;    color: white !important;
+
+    /* background-color: rgba(255, 255, 255, 0.353); */
+}
+
+
+.sales-text-2 button {
+    background-color: #eee !important;
+    color: black !important;
+}
+.sales-text-3 button {
+    background-color: #eee !important;
+    color: black !important;
+}
+
+.sales-text-4 {
+    right:10px;
+    /* transform: translateX(-50%); */
+    bottom: 50px;
+}

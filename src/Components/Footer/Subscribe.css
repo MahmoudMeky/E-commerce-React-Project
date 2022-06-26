@@ -1,0 +1,24 @@
+.subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+
+.subscribe__content {
+    display: flex;
+    width: fit-content;
+}
+
+.subscribe__icons {
+    display: flex;
+    /* width: 20%; */
+    width: fit-content;
+}
+
+.subscribe__icons .icon {}
+
+.subscribe__icons .icon img {
+    width: 20px;
+}

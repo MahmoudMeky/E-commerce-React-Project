@@ -1,0 +1,43 @@
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    position: relative;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+.feature-item .text {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    margin-top: 10px;
+}
+
+.feature-item span {
+    color: rgb(127, 127, 127);
+}
+
+.feature-item h5 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: .9rem!important;
+    color: rgb(149, 149, 149);
+}

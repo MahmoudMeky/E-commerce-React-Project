@@ -1,0 +1,11 @@
+/* .landing {
+    height: 100vh;
+    background-image: url("../../../../public/landing/banner1.jpg");
+    background-size: cover;
+} */
+
+.landing {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
