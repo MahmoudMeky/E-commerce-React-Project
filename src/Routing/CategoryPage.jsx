@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Product from "../Components/Products/Product/Product";
-import {useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 export default function CategoryPage() {
   let { category } = useParams();
 
   let [categories, setCategories] = useState([]);
   let [numOfProductsToShow, setnumOfProductsToShow] = useState(12);
-
   let categoryID = false;
 
   switch (category) {
@@ -30,6 +29,8 @@ export default function CategoryPage() {
 
     default:
       categoryID = false;
+
+
       break;
   }
   useEffect(() => {
@@ -40,20 +41,20 @@ export default function CategoryPage() {
       .then((response) => {
         setCategories(response.data);
       });
-  }, [numOfProductsToShow,category]);
+  }, [numOfProductsToShow, category]);
 
-  useEffect(()=>{
+  useEffect(() => {
     // Resetting Number of Items
     setnumOfProductsToShow(12)
-  },[category])
+  }, [category])
 
 
   function showMoreProducts() {
-    setnumOfProductsToShow(numOfProductsToShow+6);
+    setnumOfProductsToShow(numOfProductsToShow + 6);
   }
 
   return (
-    <>
+    <>{categoryID?
       <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4">
         <h5 className="section-title">{category}</h5>
         <div className="items">
@@ -77,8 +78,8 @@ export default function CategoryPage() {
           Show More
         </button>
       </section>
-
-
+      :<Navigate to={"/error"} replace={true}></Navigate>
+    }
     </>
   );
 }
