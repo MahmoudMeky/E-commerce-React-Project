@@ -59,7 +59,6 @@ export default function ProductPage() {
       {
 
         item ?
-
           <div className="product-page px-1 px-lg-5 mt-5 ">
             <div className="row px-3 d-flex flex-wrap h-100">
               <div
@@ -182,8 +181,7 @@ export default function ProductPage() {
             </div>
           </div>
           :
-          
-          <ErrorPage/>
+          error?<ErrorPage/>:""
         
       
       }
