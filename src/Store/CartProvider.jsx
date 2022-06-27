@@ -1,9 +1,16 @@
 import React, { useReducer } from "react";
-import { act } from "react-dom/test-utils";
-import { ReactReduxContext } from "react-redux";
 import CartContext from "./CartContext";
 
-const defaultCartState = { items: [], totalAmount: 0 };
+function addCartToLocalStorage(cartItemsState) {
+  window.localStorage.setItem("cartItems", cartItemsState)
+}
+
+let defaultCartState = { items: [], totalAmount: 0 };
+
+// Restoring CartItems from Local Storage
+if (window.localStorage.cartItems) {
+  defaultCartState = JSON.parse(window.localStorage.getItem("cartItems"));
+}
 
 const cartReducer = function (state, action) {
   let updatedTotalAmout;
@@ -58,6 +65,7 @@ const cartReducer = function (state, action) {
 };
 
 export default function CartProvider(props) {
+
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     defaultCartState
@@ -86,6 +94,9 @@ export default function CartProvider(props) {
     removeItem: removeItemHalnder,
     changeAmount: changeAmountHandler,
   };
+
+  // Adding The cart content to LocalStorage
+  addCartToLocalStorage(JSON.stringify(cartContext));
 
   return (
     <CartContext.Provider value={cartContext}>

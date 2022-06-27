@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Product from "../Components/Products/Product/Product";
-import { NavLink, useParams } from "react-router-dom";
-import ErrorPage from "./ErrorPage";
+import {useParams } from "react-router-dom";
 
 export default function CategoryPage() {
   let { category } = useParams();
@@ -34,29 +33,27 @@ export default function CategoryPage() {
       break;
   }
   useEffect(() => {
-    if (categoryID) {
-      // Resetting Number of Items
-      setnumOfProductsToShow(12)
+    axios
+      .get(
+        `https://api.escuelajs.co/api/v1/categories/${categoryID}/products?offset=0&limit=${numOfProductsToShow}`
+      )
+      .then((response) => {
+        setCategories(response.data);
+      });
+  }, [numOfProductsToShow,category]);
 
-      axios
-        .get(
-          `https://api.escuelajs.co/api/v1/categories/${categoryID}/products?offset=0&limit=${numOfProductsToShow}`
-        )
-        .then((response) => {
-          setCategories(response.data);
-        });
+  useEffect(()=>{
+    // Resetting Number of Items
+    setnumOfProductsToShow(12)
+  },[category])
 
-    }
-
-  }, [numOfProductsToShow, category]);
 
   function showMoreProducts() {
-    setnumOfProductsToShow(numOfProductsToShow + 6);
+    setnumOfProductsToShow(numOfProductsToShow+6);
   }
 
   return (
     <>
-
       <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4">
         <h5 className="section-title">{category}</h5>
         <div className="items">
@@ -80,8 +77,8 @@ export default function CategoryPage() {
           Show More
         </button>
       </section>
-    
-      
+
+
     </>
   );
 }
