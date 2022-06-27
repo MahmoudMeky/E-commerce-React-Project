@@ -1,3 +1,11 @@
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, EffectCoverflow } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useContext } from "react";
@@ -50,17 +58,60 @@ export default function ProductPage() {
               style={{ minHeight: "800px" }}
             >
               <div className=" shadow-lg  h-100 p-2 bg-light">
-                {/* Slider Here */}
-                <img
-                  src={item.images}
-                  alt=""
-                  className="img-fluid w-100"
-                  style={{
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center center",
+                <Swiper
+                  className="product-slider h-100"
+                  effect={"coverflow"}
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={"auto"}
+                  coverflowEffect={{
+                    rotate: 80,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
                   }}
-                />
+                  pagination={true}
+                  navigation={true}
+                  modules={[EffectCoverflow, Pagination, Navigation]}
+                >
+                  <SwiperSlide>
+                    <img
+                      src={item.images[0]}
+                      alt="Product-Image"
+                      className="img-fluid w-100"
+                      style={{
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center center",
+                      }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={item.images[1]}
+                      alt="Product-Image"
+                      className="img-fluid w-100"
+                      style={{
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center center",
+                      }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={item.images[2]}
+                      alt="Product-Image"
+                      className="img-fluid w-100"
+                      style={{
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center center",
+                      }}
+                    />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
 

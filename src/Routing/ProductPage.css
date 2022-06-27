@@ -1,5 +1,5 @@
 .product-page span.next,
-.product-page span.prev{
+.product-page span.prev {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -10,22 +10,43 @@
 }
 
 .product-page span.next:hover,
-.product-page span.prev:hover{
-    background-color:#ff5b5b;
+.product-page span.prev:hover {
+    background-color: #ff5b5b;
 }
 
 .product-page span.next:hover svg,
-.product-page span.prev:hover svg{
+.product-page span.prev:hover svg {
     fill: white;
-    
+
 }
 
 
-.item-addcart{
+.item-addcart {
     width: fit-content;
 }
 
-.item-addcart:hover{
+.item-addcart:hover {
     background-color: #ff5b5b;
     border-color: #ff5b5b;
+}
+
+
+/* Slider */
+.product-slider .swiper-button-next,
+.product-slider .swiper-button-prev {
+    color: white;
+
+}
+
+.product-slider .swiper-button-next::after,
+.product-slider .swiper-button-prev::after{
+    padding: 30px 10px;
+    /* background-color: #f4f4f44d; */
+    font-size: 30px;
+
+}
+
+.product-slider .swiper-pagination-bullet-active {
+    background-color: black;
+
 }
