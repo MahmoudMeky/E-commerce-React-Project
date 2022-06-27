@@ -9,12 +9,22 @@ import {
   Button,
 } from "react-bootstrap";
 
+import { Link, NavLink } from "react-router-dom";
+
 import Cart from "./Cart";
 import "./MainNavbar.css";
 
+
+
 export default function MainNavbar() {
+
+  function showHideDropDown(){
+    
+  }
+
+
   return (
-    <Navbar bg="" expand="lg" className="w-100 px-5  shadow-lg" >
+    <Navbar bg="" expand="lg" className="w-100 px-5  shadow-lg">
       <Container fluid className="gap-lg-3 px-3">
         <Navbar.Brand href="/home">
           <img
@@ -31,22 +41,50 @@ export default function MainNavbar() {
 
         <Navbar.Collapse id="navbarScroll" className="order-1 order-lg-0">
           <Nav className="me-auto my-2 my-lg-0">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <NavDropdown title="Categories" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/categories/clothes">clothes</NavDropdown.Item>
-              <NavDropdown.Item href="/categories/electronics">electronics</NavDropdown.Item>
-              <NavDropdown.Item href="/categories/furniture">furniture</NavDropdown.Item>
-              <NavDropdown.Item href="/categories/shoes">shoes</NavDropdown.Item>
-              <NavDropdown.Item href="/categories/others">others</NavDropdown.Item>
+            <NavLink to="/home" className="nav-link">
+              Home
+            </NavLink>
+            <NavDropdown title="Categories" id="navbarScrollingDropdown"  >
+
+
+
+
+              <NavDropdown.Item className="p-0">
+                <Link to="/categories/clothes" className="dropdown-item">clothes</Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="p-0" >
+                <Link to="/categories/electronics" className="dropdown-item">electronics</Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="p-0">
+                <Link to="/categories/furniture" className="dropdown-item">furniture</Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="p-0">
+                <Link to="/categories/shoes" className="dropdown-item">shoes</Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="p-0">
+                <Link to="/categories/others" className="dropdown-item">others</Link>
+              </NavDropdown.Item>
+
+    
+
 
             </NavDropdown>
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
+
+            <NavLink to="/about" className="nav-link">
+              About
+            </NavLink>
+            <NavLink to="/contact" className="nav-link">
+              Contact
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         <div className="icons d-flex gap-2 gap-md-3 align-items-center">
           <div className="search-container">
-          {/* <Form className="d-flex">
+            {/* <Form className="d-flex">
             <FormControl
               type="search"
               placeholder="Search"

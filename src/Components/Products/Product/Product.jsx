@@ -4,6 +4,7 @@ import "./Product.css";
 import CartContext from "../../../Store/CartContext";
 import { useEffect } from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Product(props) {
 
@@ -40,9 +41,9 @@ export default function Product(props) {
           <h6 className="m-0">Item Added!</h6>
         </div>
 
-        <a className="view-item" href={`/products/${props.id}`}>
+        <NavLink className="view-item" to={`/products/${props.id}`}>
           <h5>View Item</h5>
-        </a>
+        </NavLink>
         {/* <div className="add-to-cart" onClick={addToCartHandler}>
             <img src="/icons/cart-add.svg" alt="add to cart" />
             <h5>Add to Cart</h5>

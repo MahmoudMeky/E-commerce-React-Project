@@ -3,7 +3,7 @@ import "./CategoryItem.css"
 
 export default function CategoryItem(props) {
     return (
-        <a className="item" href={`/categories/${props.categoryName}`}>
+        <a className="item" href={`/categories/${props.categoryName.toLowerCase()}`}>
             <div className="img">
                 <img
                     src={props.imageSrc}
