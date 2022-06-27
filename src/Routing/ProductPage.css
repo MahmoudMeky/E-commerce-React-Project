@@ -1,0 +1,31 @@
+.product-page span.next,
+.product-page span.prev{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.product-page span.next:hover,
+.product-page span.prev:hover{
+    background-color:#ff5b5b;
+}
+
+.product-page span.next:hover svg,
+.product-page span.prev:hover svg{
+    fill: white;
+    
+}
+
+
+.item-addcart{
+    width: fit-content;
+}
+
+.item-addcart:hover{
+    background-color: #ff5b5b;
+    border-color: #ff5b5b;
+}

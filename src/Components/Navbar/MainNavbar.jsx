@@ -18,13 +18,11 @@ import "./MainNavbar.css";
 
 export default function MainNavbar() {
 
-  function showHideDropDown(){
-    
-  }
+
 
 
   return (
-    <Navbar bg="" expand="lg" className="w-100 px-5  shadow-lg">
+    <Navbar bg="" expand="lg" className=" px-1 px-sm-5  shadow-lg">
       <Container fluid className="gap-lg-3 px-3">
         <Navbar.Brand href="/home">
           <img
