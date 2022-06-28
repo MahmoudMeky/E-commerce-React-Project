@@ -11,12 +11,16 @@ import {
 
 import { Link, NavLink } from "react-router-dom";
 
-import Modal from "../Helpers/Modal";
-
 import Cart from "./Cart";
 import "./MainNavbar.css";
 
+
+
 export default function MainNavbar() {
+
+
+
+
   return (
     <Navbar bg="" expand="lg" className=" px-1 px-sm-5  shadow-lg">
       <Container fluid className="gap-lg-3 px-3">
@@ -38,36 +42,34 @@ export default function MainNavbar() {
             <NavLink to="/home" className="nav-link">
               Home
             </NavLink>
-            <NavDropdown title="Categories" id="navbarScrollingDropdown">
+            <NavDropdown title="Categories" id="navbarScrollingDropdown"  >
+
+
+
+
               <NavDropdown.Item className="p-0">
-                <Link to="/categories/clothes" className="dropdown-item">
-                  clothes
-                </Link>
+                <Link to="/categories/clothes" className="dropdown-item">clothes</Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item className="p-0" >
+                <Link to="/categories/electronics" className="dropdown-item">electronics</Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item className="p-0">
-                <Link to="/categories/electronics" className="dropdown-item">
-                  electronics
-                </Link>
+                <Link to="/categories/furniture" className="dropdown-item">furniture</Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item className="p-0">
-                <Link to="/categories/furniture" className="dropdown-item">
-                  furniture
-                </Link>
+                <Link to="/categories/shoes" className="dropdown-item">shoes</Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item className="p-0">
-                <Link to="/categories/shoes" className="dropdown-item">
-                  shoes
-                </Link>
+                <Link to="/categories/others" className="dropdown-item">others</Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item className="p-0">
-                <Link to="/categories/others" className="dropdown-item">
-                  others
-                </Link>
-              </NavDropdown.Item>
+
+
+
             </NavDropdown>
 
             <NavLink to="/about" className="nav-link">
@@ -79,23 +81,18 @@ export default function MainNavbar() {
           </Nav>
         </Navbar.Collapse>
         <div className="icons d-flex gap-2 gap-md-3 align-items-center">
-          <Modal
-            title="Search"
-            body={
-              <form className="d-flex flex-column gap-3" action="/search" method="get">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                  name="query"
-                />
-                <button type="submit" className="btn-dark p-2">Search</button>
-              </form>
-            }
-            btnTitle="Close"
-          />
-
+          <div className="backdrop">
+            <form className="" action="/search" method="get">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+                name="query"
+              />
+            </form>
+          </div>
+          <img src="/icons/search.svg" width="25px" alt="" />
           <img src="/icons/user.svg" width="25px" alt="" />
           {/* <img src="/icons/heart.svg" width="25px" alt="" /> */}
 
