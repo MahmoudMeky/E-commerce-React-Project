@@ -74,6 +74,7 @@ export default function CategoryPage() {
         <button
           onClick={showMoreProducts}
           className="sales-btn btn bg-black px-3 text-white rounded-0 text-uppercase fw-bold p-2" 
+          style={{height:"fit-content"}}
         >
           Show More
         </button>

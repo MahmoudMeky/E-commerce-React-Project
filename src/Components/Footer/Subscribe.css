@@ -31,7 +31,9 @@
     fill: white;
 }
 
-
+.subscribe form input{
+    outline: none;
+}
 
 
 
