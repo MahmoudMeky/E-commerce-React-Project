@@ -9,6 +9,13 @@
     position: relative;
 }
 
+@media (max-width:376px) {
+    .features {
+
+        grid-template-columns: 1fr;
+    }
+}
+
 .feature-item {
     display: flex;
     flex-direction: column;
@@ -38,6 +45,6 @@
 
 .feature-item p {
     margin: 0;
-    font-size: .9rem!important;
+    font-size: .9rem !important;
     color: rgb(149, 149, 149);
 }

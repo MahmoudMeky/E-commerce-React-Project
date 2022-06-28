@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MainNavbar from "./Components/Navbar/MainNavbar";
+import Footer from "./Components/Footer/Footer";
 import CartProvider from "./Store/CartProvider";
-import Subscribe from "./Components/Footer/Subscribe";
 import HomePage from "./Routing/HomePage";
 import AboutPage from "./Routing/AboutPage";
 import ContactPage from "./Routing/ContactPage";
@@ -10,6 +10,7 @@ import ErrorPage from "./Routing/ErrorPage";
 import CategoryPage from "./Routing/CategoryPage";
 import ProductPage from "./Routing/ProductPage";
 import CartPage from "./Routing/CartPage";
+
 
 
 import { Route, Routes } from "react-router-dom";
@@ -32,8 +33,8 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
 
-            {/* <Subscribe /> */}
-
+            
+            <Footer/>
         </CartProvider>
     );
 }

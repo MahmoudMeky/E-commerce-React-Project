@@ -1,24 +1,50 @@
-.subscribe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 3rem;
-}
-
-
-.subscribe__content {
-    display: flex;
-    width: fit-content;
-}
-
-.subscribe__icons {
-    display: flex;
-    /* width: 20%; */
-    width: fit-content;
-}
-
-.subscribe__icons .icon {}
 
 .subscribe__icons .icon img {
     width: 20px;
+}
+
+.subscribe form input {
+    background-color: #ededed;
+    /* width: 300px; */
+    padding-left: 10px;
+}
+
+.subscribe form input::placeholder {
+    padding-left: 3px;
+    opacity: .5;
+    font-size: .85rem;
+}
+.subscribe__icons .icon{
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+.subscribe__icons .icon:hover{
+    background-color: black;
+}
+.subscribe__icons .icon svg{
+    transition: .3s;
+}
+.subscribe__icons .icon:hover svg{
+    fill: white;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:576px) {
+    .subscribe form input {
+        height: 50px!important;
+    }
+    .subscribe form{
+        width: 100%;
+    }
 }

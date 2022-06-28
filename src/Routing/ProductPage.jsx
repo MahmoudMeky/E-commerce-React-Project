@@ -59,7 +59,7 @@ export default function ProductPage() {
       {
 
         item ?
-          <div className="product-page px-1 px-lg-5 mt-5 ">
+          <div className="product-page px-1 px-lg-5 mt-4  " style={{minHeight:"calc(100vh - 142px)"}}>
             <div className="row px-3 d-flex flex-wrap h-100">
               <div
                 className="product-images col-12 col-md-5 col-lg-4 p-0"

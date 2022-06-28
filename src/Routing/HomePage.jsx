@@ -1,6 +1,7 @@
 import React from 'react'
 import Categories from '../Components/Categories/Categories'
 import Features from '../Components/Features/Features'
+import Subscribe from '../Components/Footer/Subscribe'
 import Landing from '../Components/Landing/Landing'
 import Products from '../Components/Products/Products'
 import SalesSection from '../Components/Sales/SalesSection'
@@ -13,6 +14,7 @@ export default function HomePage() {
             <SalesSection />
             <Products />
             <Features />
+            <Subscribe />
         </>
     )
 }

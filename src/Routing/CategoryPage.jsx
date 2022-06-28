@@ -55,7 +55,7 @@ export default function CategoryPage() {
 
   return (
     <>{categoryID?
-      <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4">
+      <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4" style={{minHeight:"calc(100vh - 118px)"}}>
         <h5 className="section-title">{category}</h5>
         <div className="items">
           {categories.map((cat) => {
@@ -73,7 +73,7 @@ export default function CategoryPage() {
         </div>
         <button
           onClick={showMoreProducts}
-          className="sales-btn btn bg-black px-3 text-white rounded-0 text-uppercase fw-bold p-2"
+          className="sales-btn btn bg-black px-3 text-white rounded-0 text-uppercase fw-bold p-2" 
         >
           Show More
         </button>
