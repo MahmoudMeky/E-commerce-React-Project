@@ -23,8 +23,11 @@ export default function CategoryPage() {
     case "shoes":
       categoryID = 4;
       break;
-    case "others":
+    case "other":
       categoryID = 5;
+      break;
+    case "tech":
+      categoryID = 6;
       break;
 
     default:

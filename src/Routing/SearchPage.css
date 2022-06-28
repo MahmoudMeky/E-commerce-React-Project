@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
 }
 
 .search-items .items .item {
@@ -24,5 +25,7 @@
     align-items:unset;
     height: unset;
     position: unset;
-    overflow: unset
+    overflow: unset;
+
+
 }

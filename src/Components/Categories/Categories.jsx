@@ -12,7 +12,7 @@ export default function Categories() {
   let [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get("https://api.escuelajs.co/api/v1/categories").then((response) => {
+    axios.get("https://api.escuelajs.co/api/v1/categories?offset=0&limit=5").then((response) => {
       setCategories(response.data);
     });
   }, [categories])
