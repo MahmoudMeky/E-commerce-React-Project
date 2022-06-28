@@ -14,6 +14,7 @@ import CartPage from "./Routing/CartPage";
 
 
 import { Route, Routes } from "react-router-dom";
+import SearchPage from "./Routing/SearchPage";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/categories/:category" element={<CategoryPage />} />
                 <Route path="/products/:id" element={<ProductPage />} />
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
 

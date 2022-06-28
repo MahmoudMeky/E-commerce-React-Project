@@ -22,7 +22,7 @@ export default function Products() {
     }
 
     return (
-        <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4">
+        <section className="products row p-0 p-md-5 py-5 m-0 justify-content-center gap-4" id="all-products">
             <h5 className="section-title">All Products</h5>
             <div className="items">
                 {/* <Product id="1" prodName="H" prodPrice="200" imageSrc="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" imageAlt="HEY" /> */}

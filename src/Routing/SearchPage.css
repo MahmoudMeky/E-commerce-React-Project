@@ -1,0 +1,28 @@
+.search-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.search-items .items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-items .items .item {
+    height: 300px;
+    flex-basis: 300px;
+    flex: 1;
+
+    padding: unset;
+    display: unset;
+    flex-direction: unset;
+    justify-content:unset;
+    align-items:unset;
+    height: unset;
+    position: unset;
+    overflow: unset
+}

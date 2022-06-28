@@ -23,9 +23,9 @@ function CarouselFadeExample() {
                     <h6 className="fw-bold">99</h6>
                 </div>
             </div>
-            <button className="landing-button btn bg-black px-3 text-white w-100 rounded-0">
+            <a className="landing-button btn bg-black px-3 text-white w-100 rounded-0" href="#all-products" > 
             Shop Now
-            </button>
+            </a>
             </Carousel.Caption>
         </Carousel.Item>
     
@@ -43,9 +43,9 @@ function CarouselFadeExample() {
                     <h6 className="fw-bold">99</h6>
                 </div>
             </div>
-            <button className="landing-button btn bg-black px-3 text-white w-100 rounded-0">
+            <a className="landing-button btn bg-black px-3 text-white w-100 rounded-0" href="#all-products">
             Shop Now
-            </button>
+            </a>
             </Carousel.Caption>
         </Carousel.Item>
     

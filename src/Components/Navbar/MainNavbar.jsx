@@ -82,14 +82,15 @@ export default function MainNavbar() {
         </Navbar.Collapse>
         <div className="icons d-flex gap-2 gap-md-3 align-items-center">
           <div className="search-container">
-            {/* <Form className="d-flex">
+            <form className="d-flex" action="/search" method="get">
             <FormControl
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              name="query"
             />
-          </Form> */}
+          </form>
           </div>
           <img src="/icons/search.svg" width="25px" alt="" />
           <img src="/icons/user.svg" width="25px" alt="" />
