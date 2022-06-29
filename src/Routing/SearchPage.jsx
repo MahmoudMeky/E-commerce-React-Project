@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SearchPage.css";
 
+import ReactLoading from "react-loading";
+
 import { useSearchParams, Navigate } from "react-router-dom";
 
 import Product from "../Components/Products/Product/Product";
@@ -16,13 +18,15 @@ export default function SearchPage() {
     }
 
     let [items, setItems] = useState(false);
-    let [filteredItems, setFilterdItems] = useState([]);
+    let [filteredItems, setFilterdItems] = useState("loading");
 
     useEffect(() => {
         axios
             .get(`https://api.escuelajs.co/api/v1/products/`)
             .then((response) => {
-                setItems(response.data);
+                setTimeout(() => {
+                    setItems(response.data);
+                }, 200)
             })
             .catch((error) => {
                 console.log(error);
@@ -45,7 +49,11 @@ export default function SearchPage() {
                 style={{ minHeight: "calc(100vh - 118px)" }}
             >
                 <h5 className="section-title">Search Results</h5>
-                {filteredItems.length ? (
+                {filteredItems == "loading" ? (
+                    <div className="w-100 h-100 mt-5  d-flex align-items-center justify-content-center">
+                        <ReactLoading type={"spin"} color={"black"} width={80} />
+                    </div>
+                ) : filteredItems.length ? (
                     <div>
                         <div className="items">
                             {filteredItems.map((item) => {
