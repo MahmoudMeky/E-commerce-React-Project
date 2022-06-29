@@ -30,7 +30,7 @@
     align-items: center;
 }
 
-.cart__item .qty button{
+.cart-btn{
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -39,11 +39,11 @@
     transition: .3s;
 }
 
-.cart__item button:hover{
+.cart-btn:hover{
     background-color: #ff0018;
     color: white;
 }
-.cart__item button:active{
+.cart-btn:active{
     background-color: #000;
     color: white;
 }

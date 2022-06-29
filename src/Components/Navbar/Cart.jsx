@@ -6,6 +6,7 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 import { useContext } from "react";
 import CartContext from "../../Store/CartContext";
+import { NavLink } from "react-router-dom";
 
 export default function Cart() {
   const cartContext = useContext(CartContext);
@@ -16,24 +17,24 @@ export default function Cart() {
     setIsCartShown(!isCartShown);
   }
 
-  let numberOfCartItems = cartContext.items.reduce((acc,item)=>{
+  let numberOfCartItems = cartContext.items.reduce((acc, item) => {
     return acc + item.amount
-  },0);
+  }, 0);
 
-  let [counterAnimated,setCounterAnimated]=useState(false);
+  let [counterAnimated, setCounterAnimated] = useState(false);
 
-  let counterClasses=`counter ${counterAnimated?"animate":""}`
-  
+  let counterClasses = `counter ${counterAnimated ? "animate" : ""}`
+
   // Animation Part
-  useEffect(()=>{
-    if(cartContext.items.length===0){
+  useEffect(() => {
+    if (cartContext.items.length === 0) {
       return;
     }
     setCounterAnimated(true);
-    setTimeout(()=>{
+    setTimeout(() => {
       setCounterAnimated(false)
-    },600)
-  },[cartContext.items])
+    }, 600)
+  }, [cartContext.items])
 
 
   // End
@@ -43,7 +44,7 @@ export default function Cart() {
       <img src="/icons/bag.svg" width="25px" alt="" onClick={showCart} />
 
       {isCartShown && (
-        <div className="cart p-3 d-flex  flex-column justify-content-start">
+        <div className="cart p-3 d-flex  flex-column justify-content-start shadow" >
           <div className="top d-flex m-0 justify-content-between w-100 pb-2 border-bottom">
             <span className="text-uppercase">{numberOfCartItems} Items</span>
             <a className="text-uppercase" href="/cart">View Cart</a>
@@ -52,7 +53,7 @@ export default function Cart() {
           {cartContext.items.map((item) => {
             return (
               <CartItem
-                key={item.id*Math.random()}
+                key={item.id * Math.random()}
                 itemContent={{
                   id: item.id,
                   name: item.name,
@@ -73,9 +74,12 @@ export default function Cart() {
           ) : (
             <h6 className="text-center my-3">You have no items added!</h6>
           )}
-          <button className="checkout btn bg-black px-3 text-white w-100 rounded-0">
+
+          <NavLink to="/cart" className="nav-link checkout  btn bg-black px-3    rounded-0">
+          <span className="  text-white">
             Checkout
-          </button>
+          </span>
+          </NavLink>
         </div>
       )}
     </div>

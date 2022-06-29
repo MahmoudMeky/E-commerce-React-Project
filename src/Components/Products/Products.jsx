@@ -30,7 +30,7 @@ export default function Products() {
                     return <Product
                         key={prod.id}
                         id={prod.id}
-                        prodName={prod.title.slice(0, 10)}
+                        prodName={prod.title}
                         prodPrice={prod.price}
                         imageSrc={prod.images[0]}
                         imageAlt={prod.title}

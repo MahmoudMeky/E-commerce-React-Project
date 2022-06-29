@@ -26,7 +26,7 @@ export default function SearchPage() {
             .then((response) => {
                 setTimeout(() => {
                     setItems(response.data);
-                }, 200)
+                }, 100)
             })
             .catch((error) => {
                 console.log(error);
@@ -36,7 +36,7 @@ export default function SearchPage() {
     useEffect(() => {
         if (items) {
             let filterd = items.filter((el) => {
-                return String(el.title).toLowerCase().search(searchText) > 0;
+                return String(el.title).toLowerCase().search(searchText) >= 0;
             });
             setFilterdItems(filterd);
         }

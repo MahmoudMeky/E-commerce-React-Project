@@ -25,8 +25,8 @@ export default function CartItem(props) {
         <div className="qty">
           <span>Qty: {props.itemContent.amount}</span>
           <div>
-            <button onClick={increaseAmountHanlder}>+</button>
-            <button  onClick={decreaseAmountHanlder}>-</button>
+            <button className="cart-btn" onClick={increaseAmountHanlder}>+</button>
+            <button className="cart-btn"  onClick={decreaseAmountHanlder}>-</button>
           </div>
         </div>
       </div>
