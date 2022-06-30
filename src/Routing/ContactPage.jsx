@@ -5,7 +5,7 @@ import "./ContactPage.css"
 export default function ContactPage() {
 
   return (
-    <div className="contact-page row py-3 m-0 text-center text-lg-start">
+    <div className="contact-page row py-3 m-0 text-center align-items-center  text-lg-start">
       <div className="contact-form col-12 col-lg-8 p-2">
         <div className="row m-0">
           <div className="col-md-12">
@@ -48,10 +48,10 @@ export default function ContactPage() {
 
       </div>
 
-      <div className='col-12 col-lg-4  d-flex align-items-start justify-content-center mt-lg-5 py-lg-3  mt-3  '>
+      <div className='col-12 col-lg-4  d-flex align-items-start justify-content-center mt-lg-5 py-lg-3 align-self-end   '>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3435.6630618353474!2d31.016569551027242!3d30.558822281608276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d7223ff2d63f%3A0x9d531b61c0ebb81b!2sITI%20Menofia%20Branch!5e0!3m2!1sen!2snl!4v1656584146447!5m2!1sen!2snl"
           style={{ width: 500, height: 500, border: "1px solid #eee", maxWidth:"100%" }}
-          className="contact-map shadow opacity-50"
+          className="contact-map shadow opacity-50 p-1"
 
         ></iframe>
       </div>

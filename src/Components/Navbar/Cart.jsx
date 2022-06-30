@@ -48,7 +48,6 @@ export default function Cart() {
         <div className="cart p-3 d-flex  flex-column justify-content-start shadow" >
           <div className="top d-flex m-0 justify-content-between w-100 pb-2 border-bottom">
             <span className="text-uppercase">{numberOfCartItems} Items</span>
-            {/* <a className="text-uppercase" href="/cart">View Cart</a> */}
             <NavLink to="/cart" className="text-uppercase" onClick={showCart}>
               View Cart
             </NavLink>
@@ -86,6 +85,8 @@ export default function Cart() {
           </NavLink>
         </div>
       )}
+
+
     </div>
   );
 }

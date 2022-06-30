@@ -1,20 +1,21 @@
 .contact-page {
-    min-height: calc(100vh - 118px);
+    min-height: calc(100vh - 110px);
     display: flex;
+    align-content: flex-start;
 }
 
 @media (min-width:767px) {
     .contact-page {
-        padding: 3rem 4rem!important;
+        padding: 3rem 4rem !important;
 
     }
 }
 
 
-.contact-map{
+.contact-map {
     transition: .4s;
 }
 
-.contact-map:hover{
-    opacity: 1!important;
+.contact-map:hover {
+    opacity: 1 !important;
 }

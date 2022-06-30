@@ -10,6 +10,7 @@ import ErrorPage from "./Routing/ErrorPage";
 import CategoryPage from "./Routing/CategoryPage";
 import ProductPage from "./Routing/ProductPage";
 import CartPage from "./Routing/CartPage";
+import UserPage from "./Routing/UserPage";
 
 
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/categories/:category" element={<CategoryPage />} />
                 <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/search" element={<SearchPage />} />
+                <Route path="/user" element={<UserPage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
 

@@ -50,7 +50,10 @@
     background-color: black;
 
 }
+.product-page{
+    min-height: calc(100vh - 134px);
 
+}
 
 @media (max-width:576px) {
     .product-images {

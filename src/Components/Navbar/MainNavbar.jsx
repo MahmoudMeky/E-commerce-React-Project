@@ -95,9 +95,9 @@ export default function MainNavbar() {
             }
             btnTitle="Close"
           />
-
-          <img src="/icons/user.svg" width="25px" alt="" />
-          {/* <img src="/icons/heart.svg" width="25px" alt="" /> */}
+          <NavLink to="/user" className="nav-link p-0">
+            <img src="/icons/user.svg" width="25px" alt="" />
+          </NavLink>
 
           <Cart />
         </div>
