@@ -20,14 +20,25 @@ export default function MainNavbar() {
   return (
     <Navbar bg="" expand="lg" className=" px-1 px-sm-5  shadow-lg">
       <Container fluid className="gap-lg-3 px-3">
-        <Navbar.Brand href="/home">
+        {/* <Navbar.Brand href="/home">
           <img
             src="/logo.png"
             className="d-inline-block align-top"
             alt="logo"
             width="110px"
           />
-        </Navbar.Brand>
+        </Navbar.Brand> */}
+
+         <NavLink to="/home" className="py-1">
+          <img
+            src="/logo.png"
+            className="d-inline-block align-top"
+            alt="logo"
+            width="110px"
+          />
+        </NavLink>
+
+         
         <Navbar.Toggle
           aria-controls="navbarScroll"
           className="order-1 p-0 border-0"

@@ -37,7 +37,7 @@ export default function AboutPage() {
                   </div>
                   <button type="submit" className='text-uppercase btn btn-dark'>Login</button>
                   <div className='d-flex flex-column flex-md-row justify-content-between'>
-                    <a href='#' className='text-center text-secondary'>Forget your password?</a>
+                    <a href='#' className='text-center text-danger mb-2'>Forget your password?</a>
                     <span className='text-center text-secondary'>Not a member yet?<button onClick={onClickHandler} type="button" className='text-center sign-in'>Join us</button> </span>
                   </div>
                 </form>
