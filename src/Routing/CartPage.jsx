@@ -15,7 +15,7 @@ export default function CartPage() {
       <div className="p-2 p-lg-4 col-12 col-lg-8">
         <div className="d-flex flex-column gap-2">
           <h5 className="mb-4 fw-bold">Shopping Cart</h5>
-          <div className="cart-header row m-0 text-uppercase fw-bold border-bottom">
+          <div className="cart-header row m-0 text-uppercase fw-bold border-bottom pb-1">
             <div className="p-0 col-3 col-lg-6">Item</div>
             <div className="p-0 col-3 col-lg-2">Price</div>
             <div className="p-0 col-3 col-lg-2">Qty</div>

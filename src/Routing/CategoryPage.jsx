@@ -66,7 +66,7 @@ export default function CategoryPage() {
               <Product
                 key={cat.id}
                 id={cat.id}
-                prodName={cat.title.slice(0, 10)}
+                prodName={cat.title}
                 prodPrice={cat.price}
                 imageSrc={cat.images[0]}
                 imageAlt={cat.title}

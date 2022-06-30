@@ -13,6 +13,7 @@ export default function Cart() {
 
   // Showing and Hiding Cart
   const [isCartShown, setIsCartShown] = useState(false);
+
   function showCart() {
     setIsCartShown(!isCartShown);
   }
@@ -39,7 +40,7 @@ export default function Cart() {
 
   // End
   return (
-    <div className="cart-container ">
+    <div className="cart-container">
       <span className={counterClasses}>{numberOfCartItems}</span>
       <img src="/icons/bag.svg" width="25px" alt="" onClick={showCart} />
 
@@ -47,7 +48,10 @@ export default function Cart() {
         <div className="cart p-3 d-flex  flex-column justify-content-start shadow" >
           <div className="top d-flex m-0 justify-content-between w-100 pb-2 border-bottom">
             <span className="text-uppercase">{numberOfCartItems} Items</span>
-            <a className="text-uppercase" href="/cart">View Cart</a>
+            {/* <a className="text-uppercase" href="/cart">View Cart</a> */}
+            <NavLink to="/cart" className="text-uppercase" onClick={showCart}>
+              View Cart
+            </NavLink>
           </div>
 
           {cartContext.items.map((item) => {
@@ -75,10 +79,10 @@ export default function Cart() {
             <h6 className="text-center my-3">You have no items added!</h6>
           )}
 
-          <NavLink to="/cart" className="nav-link checkout  btn bg-black px-3    rounded-0">
-          <span className="  text-white">
-            Checkout
-          </span>
+          <NavLink to="/cart" className="nav-link checkout  btn bg-black px-3 rounded-0" onClick={showCart}>
+            <span className="  text-white">
+              Checkout
+            </span>
           </NavLink>
         </div>
       )}
