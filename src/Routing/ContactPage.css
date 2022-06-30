@@ -1,0 +1,20 @@
+.contact-page {
+    min-height: calc(100vh - 118px);
+    display: flex;
+}
+
+@media (min-width:767px) {
+    .contact-page {
+        padding: 3rem 4rem!important;
+
+    }
+}
+
+
+.contact-map{
+    transition: .4s;
+}
+
+.contact-map:hover{
+    opacity: 1!important;
+}
