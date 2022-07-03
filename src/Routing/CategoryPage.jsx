@@ -158,10 +158,10 @@ export default function CategoryPage() {
           <div className="filter col-11 flex-column flex-md-row border d-flex gap-3 align-items-center justify-content-between p-2 px-4">
             <h5 className="m-0">Price Filter</h5>
             <input className="col-10 col-md-6" type="range" name="" id="" min={5} max={3000} step={5} ref={priceFilter} onChange={rangeRenderHandler} onMouseUp={rangeHandler} />
-            <p className="m-0 text-center lead">
+            <p className="m-0 text-center lead ">
               {priceFilterValue ?
                 `Price up to $ ${priceFilterValue}` :
-                ""
+                "Price up to Max"
               }
             </p>
           </div>}
