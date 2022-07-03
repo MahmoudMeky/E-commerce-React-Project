@@ -1,7 +1,8 @@
 .search-items {
     display: flex;
     flex-direction: column;
-    justify-content: start;    min-height: calc(100vh - 110px);
+    justify-content: flex-start;
+    min-height: calc(100vh - 110px);
 
 }
 
@@ -24,10 +25,10 @@
     height: unset;
     position: relative;
     overflow: unset;
-    
+
     display: flex;
     flex-direction: column;
-    
+
     height: 300px;
     /* background-color: red; */
     width: 300px;
@@ -37,12 +38,12 @@
 
 
 
-.search-items .items .item .img{
+.search-items .items .item .img {
     flex-shrink: 1;
-    
+
 }
 
-.search-items .items .item .text{
+.search-items .items .item .text {
     flex-grow: 1;
     min-height: 80px;
 }
