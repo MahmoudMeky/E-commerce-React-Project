@@ -10,7 +10,7 @@ import ErrorPage from "./Routing/ErrorPage";
 import CategoryPage from "./Routing/CategoryPage";
 import ProductPage from "./Routing/ProductPage";
 import CartPage from "./Routing/CartPage";
-import UserPage from "./Routing/UserPage";
+import UserPage from "./Routing/UserPage/UserPage";
 
 
 
