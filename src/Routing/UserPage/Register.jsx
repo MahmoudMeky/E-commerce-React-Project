@@ -59,7 +59,7 @@ export default function Register(props) {
                             You have successfully registered
                         </h5>
                     )}
-                    {register && props.navigateHome()}
+                    {register && props.setLoggedIn() && props.navigateHome(false)}
 
                     <form action="" method="" className="d-flex flex-column gap-4 w-100">
                         <input

@@ -9,9 +9,10 @@
 .search-items .items {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     justify-content: center;
     align-items: center;
+    justify-items: center;
 
 }
 
@@ -29,9 +30,9 @@
     display: flex;
     flex-direction: column;
 
-    height: 300px;
+    /* height: 300px; */
     /* background-color: red; */
-    width: 300px;
+    width: 280px;
 
 }
 
@@ -45,5 +46,5 @@
 
 .search-items .items .item .text {
     flex-grow: 1;
-    min-height: 80px;
+    /* min-height: 80px; */
 }

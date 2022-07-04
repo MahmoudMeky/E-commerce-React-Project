@@ -69,7 +69,8 @@ export default function Login(props) {
                             Welcome Back !
                         </h5>
                     )}
-                    {login && props.navigateHome()}
+                    
+                    {login && props.setLoggedIn() && props.navigateHome(true)}
 
                     <form className="d-flex flex-column gap-4 w-100">
                         <input

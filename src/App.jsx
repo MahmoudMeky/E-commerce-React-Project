@@ -12,6 +12,7 @@ import ProductPage from "./Routing/ProductPage";
 import CartPage from "./Routing/CartPage";
 import UserPage from "./Routing/UserPage/UserPage";
 
+import AuthenticationProvider from "./Store/AuthenticationProvider"
 
 
 import { Route, Routes } from "react-router-dom";
@@ -19,27 +20,28 @@ import SearchPage from "./Routing/SearchPage";
 
 function App() {
     return (
+        <AuthenticationProvider>
+            <CartProvider>
+                <MainNavbar />
 
-        <CartProvider>
-            <MainNavbar />
+                <Routes>
+                    <Route path="/" element={<HomePage />}>
+                        <Route path="/home" element={<HomePage />} />
+                    </Route>
+                    {/* <Route path="/about" element={<AboutPage />} /> */}
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/categories/:category" element={<CategoryPage />} />
+                    <Route path="/products/:id" element={<ProductPage />} />
+                    <Route path="/search" element={<SearchPage />} />
+                    <Route path="/user" element={<UserPage />} />
+                    <Route path="*" element={<ErrorPage />} />
+                </Routes>
 
-            <Routes>
-                <Route path="/" element={<HomePage />}>
-                    <Route path="/home" element={<HomePage />} />
-                </Route>
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/categories/:category" element={<CategoryPage />} />
-                <Route path="/products/:id" element={<ProductPage />} />
-                <Route path="/search" element={<SearchPage />} />
-                <Route path="/user" element={<UserPage />} />
-                <Route path="*" element={<ErrorPage />} />
-            </Routes>
 
-            
-            <Footer/>
-        </CartProvider>
+                <Footer />
+            </CartProvider>
+        </AuthenticationProvider>
     );
 }
 
