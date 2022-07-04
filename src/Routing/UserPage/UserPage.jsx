@@ -8,7 +8,7 @@ import Register from "./Register";
 import AuthenticationCtx from "../../Store/AuthenticationContext";
 import { useContext } from "react";
 
-export default function AboutPage() {
+export default function UserPage() {
   let AuthCtx = useContext(AuthenticationCtx);
 
   function setLoggedIn() {

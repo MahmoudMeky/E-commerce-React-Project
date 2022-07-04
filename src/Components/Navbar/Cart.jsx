@@ -42,7 +42,7 @@ export default function Cart() {
   return (
     <div className="cart-container">
       <span className={counterClasses}>{numberOfCartItems}</span>
-      <img src="/icons/bag.svg" width="25px" alt="" onClick={showCart} />
+      <img src="/icons/bag.svg" width="25px" alt="" title="Cart" onClick={showCart} />
 
       {isCartShown && (
         <div className="cart p-3 d-flex  flex-column justify-content-start shadow" >

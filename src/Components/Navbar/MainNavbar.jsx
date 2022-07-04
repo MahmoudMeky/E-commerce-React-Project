@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import {
   Navbar,
   Container,
@@ -16,20 +17,29 @@ import Modal from "../Helpers/Modal";
 import Cart from "./Cart";
 import "./MainNavbar.css";
 
+import AuthenticationContext from "../../Store/AuthenticationContext";
+
+
+
+
 export default function MainNavbar() {
+
+  let { state: isLoggedIn,setState:setLoginState } = useContext(AuthenticationContext)
+
+  function logOut(){
+
+    setTimeout(()=>{
+      setLoginState(false)
+    },300)
+
+  }
+
   return (
     <Navbar bg="" expand="lg" className=" px-1 px-sm-5  shadow-lg">
       <Container fluid className="gap-lg-3 px-3">
-        {/* <Navbar.Brand href="/home">
-          <img
-            src="/logo.png"
-            className="d-inline-block align-top"
-            alt="logo"
-            width="110px"
-          />
-        </Navbar.Brand> */}
 
-         <NavLink to="/home" className="py-1">
+
+        <NavLink to="/home" className="py-1">
           <img
             src="/logo.png"
             className="d-inline-block align-top"
@@ -38,7 +48,7 @@ export default function MainNavbar() {
           />
         </NavLink>
 
-         
+
         <Navbar.Toggle
           aria-controls="navbarScroll"
           className="order-1 p-0 border-0"
@@ -101,16 +111,31 @@ export default function MainNavbar() {
                   aria-label="Search"
                   name="query"
                 />
-                <button type="submit" className="btn-dark p-2">Search</button>
+                <button type="submit" className="btn-dark p-2" >Search</button>
               </form>
             }
             btnTitle="Close"
           />
-          <NavLink to="/user" className="nav-link p-0">
-            <img src="/icons/user.svg" width="25px" alt="" />
-          </NavLink>
+
+          
+          {
+            !isLoggedIn &&
+            <NavLink to="/user" className="nav-link p-0">
+
+              <img src="/icons/user.svg" width="25px" alt="" title="Login" />
+
+            </NavLink>
+          }
 
           <Cart />
+
+          {
+            isLoggedIn &&
+            <div className="logout" title="Logout" >
+              <img src="/icons/logout.svg" width="25px" alt="" onClick={ logOut} />
+            </div>
+          }
+          
         </div>
       </Container>
     </Navbar>

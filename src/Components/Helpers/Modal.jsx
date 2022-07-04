@@ -11,7 +11,7 @@ function ModalCompnent(props) {
 
     return (
         <>
-            <img src="/icons/search.svg" width="25px" alt=""   onClick={handleShow}/>
+            <img src="/icons/search.svg" width="25px" alt="" title={props.title}   onClick={handleShow}/>
 
 
             <Modal show={show} onHide={handleClose}>
