@@ -46,7 +46,7 @@ export default function SearchPage() {
         <>
             <section
                 className="search-items  row p-0 p-md-5 py-5 m-0  gap-4"
-               
+
             >
                 <h5 className="section-title">Search Results</h5>
                 {filteredItems == "loading" ? (

@@ -33,6 +33,8 @@ export default function Register(props) {
                 setRegisterError(false);
                 setRegister(true);
                 const token = response.data.token;
+                localStorage.setItem("access_token", token);
+
                 // console.log(token)
                 // console.log(`Token is ${token}`)
 
@@ -111,9 +113,14 @@ export default function Register(props) {
                     </form>
                 </div>
             </div>
+
+            {
+                
             <div className="right w-100 d-none d-lg-block text-center ">
                 <img src="/register.svg" width={400} alt="" className="img-fluid" />
             </div>
+
+            }
         </div>
     );
 }

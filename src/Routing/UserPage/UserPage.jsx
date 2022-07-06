@@ -8,7 +8,7 @@ import Register from "./Register";
 import AuthenticationCtx from "../../Store/AuthenticationContext";
 import { useContext } from "react";
 
-export default function UserPage() {
+export default function UserPage(props) {
   let AuthCtx = useContext(AuthenticationCtx);
 
   function setLoggedIn() {
@@ -72,6 +72,7 @@ export default function UserPage() {
             toggleLogin={showLoginHandler}
             navigateHome={navigateToHome}
             setLoggedIn={setLoggedIn}
+            
           />
 
         }

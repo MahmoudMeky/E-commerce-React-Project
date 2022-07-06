@@ -1,0 +1,42 @@
+/* .modal-content {
+    width: 100%;
+} */
+
+.modal-dialog {
+    width: 100vw !important;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show .modal-dialog {
+    background-color: #dcdcdc80;
+}
+
+.modal-fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-fullscreen .modal-content {
+    width: fit-content;
+    height: 70%;
+
+}
+
+.modal-fullscreen .modal-content .user-page {
+    height: auto;
+    padding: 0!important
+}
+
+.modal-fullscreen .modal-content .user-page .main{
+    width: 100%!important;
+}
+
+.modal-fullscreen .modal-header{
+    /* display: none; */
+}

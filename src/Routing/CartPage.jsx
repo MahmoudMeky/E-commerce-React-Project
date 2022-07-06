@@ -3,12 +3,31 @@ import { useContext } from "react";
 import "./CartPage.css";
 
 import CartContext from "../Store/CartContext.js";
+import AuthContext from "../Store/AuthenticationContext";
+import { useState } from "react";
+
+import LoginModal from '../Components/Helpers/LoginModal'
+import UserPage from '../Routing/UserPage/UserPage';
 
 export default function CartPage() {
-  const cartContext = useContext(CartContext);
+  const { state: isLoggedIn } = useContext(AuthContext);
 
+  const cartContext = useContext(CartContext);
   const items = cartContext.items;
-  const taxes=5;
+  const taxes = 5;
+
+  const [showLoginPage, setShowLoginPage] = useState(false);
+
+  function checkButtonHanlder() {
+    if (!isLoggedIn) {
+      setShowLoginPage(true)
+      return
+    }
+
+    // If Logged In and clicking Checkout...
+    alert("Thanks")
+  }
+
 
   return (
     <section className="cart-page row m-0 p-0 p-lg-5 ">
@@ -86,16 +105,34 @@ export default function CartPage() {
             </div>
             <div className="d-flex justify-content-between">
               <span>Tax.. <span className="fw-bold text-danger"> {taxes}% </span> </span>
-              <span>$ {(cartContext.totalAmount*taxes/100).toFixed(2)}</span>
+              <span>$ {(cartContext.totalAmount * taxes / 100).toFixed(2)}</span>
             </div>
           </div>
           <hr />
           <div className="d-flex justify-content-between">
             <h6 className="mb-4 fw-bold text-uppercase">Order Total</h6>
-            <h6 className="mb-4 fw-bold text-uppercase">$ {(cartContext.totalAmount*(1+(taxes/100))).toFixed(2)}</h6>
+            <h6 className="mb-4 fw-bold text-uppercase">$ {(cartContext.totalAmount * (1 + (taxes / 100))).toFixed(2)}</h6>
 
-            </div>
-          <button className="btn btn-dark rounded-0 col-12">Check Out</button>
+          </div>
+
+
+          {
+            <button className="btn btn-dark rounded-0 col-12" onClick={checkButtonHanlder}>Check Out</button>
+          }
+
+
+          {showLoginPage &&
+            <LoginModal
+              title="Please Login to proceeed"
+              body={
+                <UserPage />
+              }
+              btnTitle="Close"
+
+              toggleHandler={showLoginPage}
+            />
+          }
+
         </div>
       </div>
     </section>

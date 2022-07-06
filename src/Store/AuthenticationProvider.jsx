@@ -1,34 +1,38 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import AuthenticationContext from "./AuthenticationContext";
-
-
+import AuthFromServer from "../Auth/auth.js";
 
 export default function AuthProvider(props) {
-    
-    let defaultState=false;
+    let [tokenValid, setTokenValid] = useState(false);
 
-    if(localStorage.loggedIn){
-        defaultState=JSON.parse(localStorage.loggedIn)
+    async function checkToken() {
+        let tokenStatus = await AuthFromServer();
+        setTokenValid(tokenStatus.data);
+        
     }
-    
-    const [authenticationState, setAuthenticationState] = useState(defaultState);
 
+
+    useEffect(() => {
+        checkToken();
+        setAuthenticationState(tokenValid)
+    }, [tokenValid]);
+
+
+
+
+    const [authenticationState, setAuthenticationState] = useState(tokenValid);
 
     let Authentication = {
         state: authenticationState,
-        setState: setAuthenticationState
-    }
+        setState: setAuthenticationState,
+    };
 
-    useEffect(() => {
-            localStorage.setItem("loggedIn", authenticationState)
-    }, [authenticationState])
 
     return (
-
         <AuthenticationContext.Provider value={Authentication}>
             {props.children}
         </AuthenticationContext.Provider>
-    )
+    );
 }

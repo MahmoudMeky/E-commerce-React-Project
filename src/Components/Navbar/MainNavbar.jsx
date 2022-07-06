@@ -12,27 +12,34 @@ import {
 
 import { Link, NavLink } from "react-router-dom";
 
-import Modal from "../Helpers/Modal";
+import Modal from "../Helpers/SearchModal";
 
 import Cart from "./Cart";
 import "./MainNavbar.css";
 
 import AuthenticationContext from "../../Store/AuthenticationContext";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 
 
 export default function MainNavbar() {
 
-  let { state: isLoggedIn,setState:setLoginState } = useContext(AuthenticationContext)
 
-  function logOut(){
+  let { state: isLoggedIn, setState: setLoginState } = useContext(AuthenticationContext)
 
-    setTimeout(()=>{
-      setLoginState(false)
-    },300)
-
+  function logOut() {
+    setTimeout(() => {
+      setLoginState(false);
+      localStorage.removeItem("access_token")
+    }, 300)
   }
+
+  function showHanlder() {
+    console.log("M")
+  }
+
 
   return (
     <Navbar bg="" expand="lg" className=" px-1 px-sm-5  shadow-lg">
@@ -100,10 +107,12 @@ export default function MainNavbar() {
           </Nav>
         </Navbar.Collapse>
         <div className="icons d-flex gap-2 gap-md-3 align-items-center">
+
           <Modal
+            
             title="Search"
             body={
-              <form className="d-flex flex-column gap-3" action="/search" method="get">
+              <form className="d-flex flex-column gap-3 w-100" action="/search" method="get">
                 <FormControl
                   type="search"
                   placeholder="Search"
@@ -114,10 +123,23 @@ export default function MainNavbar() {
                 <button type="submit" className="btn-dark p-2" >Search</button>
               </form>
             }
+            searchIcon={true}
             btnTitle="Close"
           />
 
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
           {
             !isLoggedIn &&
             <NavLink to="/user" className="nav-link p-0">
@@ -132,10 +154,10 @@ export default function MainNavbar() {
           {
             isLoggedIn &&
             <div className="logout" title="Logout" >
-              <img src="/icons/logout.svg" width="25px" alt="" onClick={ logOut} />
+              <img src="/icons/logout.svg" width="25px" alt="" onClick={logOut} />
             </div>
           }
-          
+
         </div>
       </Container>
     </Navbar>
