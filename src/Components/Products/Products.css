@@ -12,3 +12,8 @@
     width: fit-content;
     padding: 10px 20px;
 } */
+
+.products:target {
+    /* padding-bottom:40px!important; */
+    padding-top: 100px!important;
+}
